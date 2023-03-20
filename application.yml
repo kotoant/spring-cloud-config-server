@@ -1,0 +1,12 @@
+# https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_pattern_matching_and_multiple_repositories
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
+          repos:
+            petclinic:
+              pattern: petclinic*
+              cloneOnStart: true
+              uri: https://github.com/kotoant/spring-petclinic-rest-config
