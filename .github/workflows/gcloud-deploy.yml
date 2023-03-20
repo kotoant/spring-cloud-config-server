@@ -26,6 +26,6 @@ jobs:
 
       - name: 'Deploy'
         run: >
-          gcloud run deploy spring-cloud-config-server --source=. --concurrency=default --cpu=1 --cpu-throttling
-          --min-instances=0 --max-instances=3 --memory=1Gi --platform=managed --port=8888 --timeout=300s
+          gcloud run deploy spring-cloud-config-server --source=. --concurrency=1000 --cpu=1 --cpu-throttling
+          --min-instances=0 --max-instances=1 --memory=1Gi --platform=managed --port=8888 --timeout=300s
           --allow-unauthenticated --revision-suffix=${GITHUB_SHA::7} --region=europe-north1 --project=kotoant
