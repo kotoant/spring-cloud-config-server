@@ -24,5 +24,8 @@ jobs:
         with:
           version: '422.0.0'
 
-      - name: 'Use gcloud CLI'
-        run: 'gcloud info'
+      - name: 'Deploy'
+        run: >
+          'gcloud run deploy spring-cloud-config-server --concurrency=default --cpu=1 --cpu-throttling
+          --min-instances=1 --max-instances=3 --memory=128Mi --platform=managed --port=8888 --timeout=300s
+          --region=europe-north1 --project=kotoant'
